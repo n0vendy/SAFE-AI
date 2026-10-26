@@ -1,33 +1,31 @@
-# SAFE.AI (web prototype)
+# SAFE.AI web prototype
 
-Privacy-conscious incident reporting for healthcare workers. Next.js (App Router) + TypeScript.
+privacy-conscious incident reporting for healthcare workers. next.js + typeScript.
 
-## Pages
+## pages
 
 - `/`: landing page
-- `/report`: anonymous multi-step report form, which posts to `/api/report`
+- `/report`: anonymous multi-step report form; posts to `/api/report`
 - `/impact`: staff impact dashboard (**placeholder data**)
 
-## Where to change things
+## to change
 
-- Survey questions: `lib/survey.ts`. The form renders entirely from this file.
-- Impact figures: `lib/impactData.ts`. Set `SAMPLE_DATA = false` to hide the "sample data" banner.
-- Report handling: `app/api/report/route.ts`. It filters answers down to known question IDs. **Reports are not stored yet**, so add a database where the `TODO` is.
-- Styles: `app/globals.css` (brand colours are at the top).
+- survey questions: `lib/survey.ts`
+- impact figures: `lib/impactData.ts`. set `SAMPLE_DATA = false` to hide "sample data" banner.
+- report handling: `app/api/report/route.ts`. filters answers down to known question IDs. **reports are not stored yet**; add database at `TODO` is.
+- styles: `app/globals.css` (brand colours are at the top)
 
-## Run locally
+## run locally
 
 ```bash
 npm install
 npm run dev     # http://localhost:3000
 ```
 
-## Deploy to Vercel
+## deploy to vercel
 
 ```bash
 vercel login
 vercel          # preview deployment
 vercel --prod   # production
 ```
-
-You can also push this folder to GitHub and import it at vercel.com/new. If you import the parent folder, set the Root Directory to `web`.
