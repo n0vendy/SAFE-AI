@@ -1,0 +1,22 @@
+
+healthcare_backend/
+│
+├── app/
+│   ├── __init__.py          # Application factory, registers extensions & blueprints
+│   ├── auth/                # Authentication, MFA, JWT, and RBAC
+│   │   ├── routes.py
+│   │   └── decorators.py    # Custom @requires_role decorator
+│   │
+│   ├── compliance/          # Immutable Audit Logging middleware
+│   │   └── middleware.py    
+│   │
+│   ├── data_collection/     # Core domain (sensitive workplace data)
+│   │   ├── routes.py
+│   │   ├── models.py        # Database models with Application-Layer Encryption
+│   │   └── schemas.py       # Marshmallow input validation schemas
+│   │
+│   └── database.py          # SQLAlchemy initialization
+│
+├── config.py                # Environment-based security settings
+├── run.py                   # WSGI entry point
+└── requirements.txt         # Core security dependencies
